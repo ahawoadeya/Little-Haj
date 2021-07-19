@@ -14,7 +14,18 @@
     <div id="page" class="hfeed site">
         <div class="wrapper">
             {% include 'banner.html' %}
+            <div id="content" class="site-content" style="padding-top: 116.906px;">
+                {% include 'nav.html' %}
+                <section id="primary" class="content-area">
+                    <main id="main" class="site-main" role="main">
+                        {% include 'post.html' %}
+                    </main>
+                </section>
+                {% include 'footer.html' %}
+            </div>
         </div>
     </div>
+
+    {% include 'scripts.html' %}
 </body>
 </html>

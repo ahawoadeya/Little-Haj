@@ -4,6 +4,8 @@ from django.db.models.deletion import CASCADE
 
 # Create your models here.
 class Post(models.Model):
+    category = models.CharField(max_length=50)
+    is_featured = models.BooleanField(blank=True, null=True) 
     title = models.CharField(max_length=50)
     date_posted = models.DateTimeField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE)
