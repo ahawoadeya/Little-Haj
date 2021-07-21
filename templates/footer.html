@@ -1,23 +1,3 @@
-<div class="before-footer-content inner-box">
-   <div class="content-container">
-      <div class="section-content">
-         <h3 style="text-align: center;">Newsletter</h3>
-         <p style="text-align: center;">Subscribe to our email newsletter for a weekly look at the top stories in travel, design and photography.</p>
-         <p></p>
-         <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-187" method="post" data-id="187" data-name="My Form">
-            <div class="mc4wp-form-fields">
-               <div class="wdb-newsletter-form">
-                  <div class="wdb-newsletter-form-wrap"> <input type="text" name="NAME" placeholder="Your name" required=""> <input type="email" name="EMAIL" placeholder="Your email address" required=""> <input type="submit" value="Sign up"></div>
-               </div>
-            </div>
-            <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp" value="1626695068"><input type="hidden" name="_mc4wp_form_id" value="187"><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
-            <div class="mc4wp-response"></div>
-         </form>
-         <p></p>
-      </div>
-   </div>
-</div>
-
 <div id="secondary" class="secondary inner-box">
    <div class="content-container">
       <div class="widget-areas flex-row huge-gutter">
@@ -25,9 +5,8 @@
             <aside id="text-2" class="widget widget_text">
                <h3 class="widget-title">About Blog</h3>
                <div class="textwidget">
-                  <p>Welcome to my blog! My name is John Wood. I am a writer, I like to travel and I love to photograph beautiful nature places and happy peoples.</p>
-                  <p>I created this blog to tell you stories from my life, share my impressions of trips and travels and show the best photos I’ve made. Thank you for attention!</p>
-                  <p><a href="#">Read More →</a></p>
+                  <p>Welcome to my blog! I'm Humphrey Haj. I am a writer,poet,songwriter and sketchist. Despite being disabled, I like to travel, adventures,meeting people and really enjoy photography.</p>
+                  <p>I created this blog to tell you stories in form of poetry from lives around me and society happenings, share my impressions and views of things I've learnt. Along the way I'll also highlight impressions of travels and the best pictures I took. Keep an eye out!</p>
                </div>
             </aside>
          </div>
@@ -35,18 +14,19 @@
             <aside id="wildbook-widget-recent-posts-2" class="widget wildbook-widget-recent-posts">
                <h3 class="widget-title">Featured Posts</h3>
                <ul>
-                  <li class="widget-post clearfix  has-post-thumbnail">
-                     <div class="post-thumbnail"> <a href="http://nordthemes.com/wild-book-demo/weekend-in-a-mountain-valley/"><img width="150" height="150" src="http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2017/08/DeathtoStock_Holiday2-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2017/08/DeathtoStock_Holiday2-150x150.jpg 150w, http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2017/08/DeathtoStock_Holiday2-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
-                     <header class="widget-post-content"> <a href="http://nordthemes.com/wild-book-demo/weekend-in-a-mountain-valley/">Weekend In A Mountain Valley</a> <span class="post-date">August 8, 2019</span></header>
-                  </li>
-                  <li class="widget-post clearfix  has-post-thumbnail">
-                     <div class="post-thumbnail"> <a href="http://nordthemes.com/wild-book-demo/sunny-morning-in-autumn-in-the-lake-house/"><img width="150" height="150" src="http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2019/09/woodwatch-taIc-HAgGgc-unsplashs-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2019/09/woodwatch-taIc-HAgGgc-unsplashs-150x150.jpg 150w, http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2019/09/woodwatch-taIc-HAgGgc-unsplashs-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
-                     <header class="widget-post-content"> <a href="http://nordthemes.com/wild-book-demo/sunny-morning-in-autumn-in-the-lake-house/">Sunny Morning in Autumn<br> in the Lake House</a> <span class="post-date">August 8, 2019</span></header>
-                  </li>
-                  <li class="widget-post clearfix  has-post-thumbnail">
-                     <div class="post-thumbnail"> <a href="http://nordthemes.com/wild-book-demo/my-first-day-in-new-york-city/"><img width="150" height="150" src="http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2017/08/afonso-coutinho-joy-qgE953k-unsplash-150x150.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2017/08/afonso-coutinho-joy-qgE953k-unsplash-150x150.jpg 150w, http://nordthemes.com/wild-book-demo/wp-content/uploads/sites/14/2017/08/afonso-coutinho-joy-qgE953k-unsplash-500x500.jpg 500w" sizes="(max-width: 150px) 100vw, 150px"></a></div>
-                     <header class="widget-post-content"> <a href="http://nordthemes.com/wild-book-demo/my-first-day-in-new-york-city/">My First Day in New York City</a> <span class="post-date">August 8, 2019</span></header>
-                  </li>
+                  
+                  {% for each in object_list %}
+                     
+                     {% if each.is_featured %}
+                        
+                        <li class="widget-post clearfix  has-post-thumbnail">
+                           <div class="post-thumbnail"> <a href="{{ each.get_absolute_url }}"><img width="150" height="150" src="{{ each.img.url }}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy"</a></div>
+                           <header class="widget-post-content"> <a href="{{ each.get_absolute_url }}">Weekend In A Mountain Valley</a> <span class="post-date">August 8, 2019</span></header>
+                        </li>
+
+                     {% endif %}
+           
+                  {% endfor %}
                </ul>
             </aside>
          </div>

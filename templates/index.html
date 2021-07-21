@@ -1,2 +1,69 @@
-{% extends 'base.html' %}
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" id="wild-book-google-fonts-css" href="//fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&amp;family=Raleway:wght@500;600&amp;display=swap" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/baseline-styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/default-styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/black-styles.css' %}">
+    <title>Little Haj</title>
+</head>
+<body class="home blog custom-background wp-embed-responsive loaded preloader-off sticky-nav">
+    <div id="page" class="hfeed site">
+        <div class="wrapper">
+            {% include 'banner.html' %}
+            <div id="content" class="site-content" style="padding-top: 116.906px;">
+                {% include 'nav.html' %}
+                <section id="primary" class="content-area">
+                    <main id="main" class="site-main" role="main">
+                        
+                        {% for post in object_list %} 
+                        <article id="post-83" class="inner-box post-83 post type-post status-publish format-standard has-post-thumbnail sticky hentry category-travel">
+                            <div class="content-container">
+                                <header class="entry-header">
+                                    
+                                    {% if post.is_featured %}
+                                        <span class="sticky-badge">Featured</span>
+                                    {% else %}
+                                        <span class="cat-links">
+                                            <a href="#" rel="category tag">{{ post.category }}</a>
+                                        </span>     
+                                    {% endif %}
+                                        
+                                    <h2 class="entry-title">{{post.title}}</h2>
+                                    <div class="entry-meta"><span class="posted-on post-meta">Posted on <time class="entry-date published updated" datetime="2021-07-21T13:56:34+00:00">{{post.date_posted}}</time></span><span class="byline post-meta"><span class="author vcard">by {{post.get_author_display}}</span></span></div>
+                                </header>
+                                <div class="entry-content">
+                                    <figure class="wp-block-image"><img loading="lazy" width="940" height="628" src="{{ post.img.url }}" alt="" class="wp-image-544"></figure>
+                                    
+                                    {% if post.quote %}
+
+                                        <blockquote class="wp-block-quote">
+                                            <p>"From the streets she cometh, to the streets she returneth"</p>
+                                            <cite>"Gilo"</cite>
+                                        </blockquote>
+
+                                    {% endif %}
+                                    <p>{{post.content|linebreaks}}</p> 
+                                    <p>The PO£T <br>
+                                        Humphrey Haj</p>
+                                </div>
+                                {% include 'share-buttons.html' %}
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </main>
+                </section>
+                {% include 'footer.html' %}
+            </div>
+        </div>
+    </div>
+
+    {% include 'scripts.html' %}
+</body>
+</html>
