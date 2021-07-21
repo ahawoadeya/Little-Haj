@@ -1,4 +1,24 @@
-<script >
+{% load static %}
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}" id="jquery-core-js"></script>
+
+<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
+
+<script src="{% static 'js/wp-emoji-release.min.js' %}" type="text/javascript" defer=""></script>
+
+<script type="text/javascript" id="wp-polyfill-js-after" src="{% static 'js/polyfill.js' %}"></script>
+
+<script type = "text/javascript" id = "contact-form-7-js-extra" src="{% static 'js/form-7.js' %}"></script>
+
+<script type = "text/javascript" id = "wild-book-functions-js-extra" src="{% static 'js/funcs.js' %}"></script>
+
+<script type = "text/javascript" id = "slb_footer" src="{% static 'js/slb_footer.js' %}"></script>
+
+<script type = "text/javascript" id = "slb_context" src="{% static 'js/slb_context.js' %}"></script>
+
+
+
+<!-- <script >
     (function() {
         function maybePrefixUrlField() {
             if (this.value.trim() !== '' && this.value.indexOf('http') !== 0) {
@@ -13,158 +33,4 @@
             }
         }
     })();
-</script>
-
-<script type = "text/javascript" >
-    var sbiajaxurl = "http://nordthemes.com/wild-book-demo/wp-admin/admin-ajax.php"; 
-</script>
-
-<script type="text/javascript" id="wp-polyfill-js-after">
-  ( 'fetch' in window ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );
-  ( document.contains ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );
-  ( window.DOMRect ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );
-  ( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );
-  ( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );
-  ( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );
-  ( 'objectFit' in document.documentElement.style ) || document.write( '<script src="http://nordthemes.com/wild-book-demo/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>' );
-</script>
-
-<script type = "text/javascript" id = "contact-form-7-js-extra" >
-    var wpcf7 = {
-        "api": {
-            "root": "http:\/\/nordthemes.com\/wild-book-demo\/wp-json\/",
-            "namespace": "contact-form-7\/v1"
-        },
-        "cached": "1"
-    }; 
-</script>
-
-<script type = "text/javascript" id = "wild-book-functions-js-extra" >
-    var wdbVars = {
-        "leftArrow": "<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 768 768\"><path d=\"M502.624 553.376l-169.376-169.376 169.376-169.376c12.512-12.512 12.512-32.768 0-45.248s-32.768-12.512-45.248 0l-192 192c-12.512 12.512-12.512 32.768 0 45.248l192 192c12.512 12.512 32.768 12.512 45.248 0s12.512-32.768 0-45.248z\"><\/path><\/svg>",
-        "rightArrow": "<svg class=\"svg-icon\" aria-hidden=\"true\" role=\"img\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 768 768\"><path d=\"M310.624 598.624l192-192c12.512-12.512 12.512-32.768 0-45.248l-192-192c-12.512-12.512-32.768-12.512-45.248 0s-12.512 32.768 0 45.248l169.376 169.376-169.376 169.376c-12.512 12.512-12.512 32.768 0 45.248s32.768 12.512 45.248 0z\"><\/path><\/svg>"
-    }; 
-</script>
-
-<script type = "text/javascript" id = "slb_footer">
-    if (!!window.jQuery) {
-        (function($) {
-            $(document).ready(function() {
-                if (!!window.SLB && SLB.has_child('View.init')) {
-                    SLB.View.init({
-                        "ui_autofit": true,
-                        "ui_animate": true,
-                        "slideshow_autostart": true,
-                        "slideshow_duration": "6",
-                        "group_loop": true,
-                        "ui_overlay_opacity": "0.8",
-                        "ui_title_default": false,
-                        "theme_default": "slb_black",
-                        "ui_labels": {
-                            "loading": "Loading",
-                            "close": "Close",
-                            "nav_next": "Next",
-                            "nav_prev": "Previous",
-                            "slideshow_start": "Start slideshow",
-                            "slideshow_stop": "Stop slideshow",
-                            "group_status": "Item %current% of %total%"
-                        }
-                    });
-                }
-                if (!!window.SLB && SLB.has_child('View.assets')) {
-                    {
-                        $.extend(SLB.View.assets, {
-                            "1538831480": {
-                                "id": 133,
-                                "type": "image",
-                                "internal": true,
-                                "source": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/uploads\/sites\/14\/2017\/08\/DeathtoStock_Holiday2.jpg",
-                                "title": "DeathtoStock_Holiday2",
-                                "caption": "",
-                                "description": ""
-                            },
-                            "1079335812": {
-                                "id": 134,
-                                "type": "image",
-                                "internal": true,
-                                "source": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/uploads\/sites\/14\/2017\/08\/DeathtoStock_NotStock8.jpg",
-                                "title": "DeathtoStock_NotStock8",
-                                "caption": "",
-                                "description": ""
-                            },
-                            "663676363": {
-                                "id": 135,
-                                "type": "image",
-                                "internal": true,
-                                "source": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/uploads\/sites\/14\/2017\/08\/IMG_1185.jpg",
-                                "title": "IMG_1185",
-                                "caption": "",
-                                "description": ""
-                            },
-                            "1249555455": {
-                                "id": 136,
-                                "type": "image",
-                                "internal": true,
-                                "source": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/uploads\/sites\/14\/2017\/08\/peter-kisteman-329830.jpg",
-                                "title": "peter-kisteman-329830",
-                                "caption": "",
-                                "description": ""
-                            }
-                        });
-                    }
-                }
-                /* THM */
-                if (!!window.SLB && SLB.has_child('View.extend_theme')) {
-                    SLB.View.extend_theme('slb_baseline', {
-                        "name": "Baseline",
-                        "parent": "",
-                        "styles": [{
-                            "handle": "base",
-                            "uri": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/plugins\/simple-lightbox\/themes\/baseline\/css\/style.css",
-                            "deps": []
-                        }],
-                        "layout_raw": "<div class=\"slb_container\"><div class=\"slb_content\">{{item.content}}<div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><div class=\"slb_controls\"><span class=\"slb_close\">{{ui.close}}<\/span><span class=\"slb_slideshow\">{{ui.slideshow_control}}<\/span><\/div><div class=\"slb_loading\">{{ui.loading}}<\/div><\/div><div class=\"slb_details\"><div class=\"inner\"><div class=\"slb_data\"><div class=\"slb_data_content\"><span class=\"slb_data_title\">{{item.title}}<\/span><span class=\"slb_group_status\">{{ui.group_status}}<\/span><div class=\"slb_data_desc\">{{item.description}}<\/div><\/div><\/div><div class=\"slb_nav\"><span class=\"slb_prev\">{{ui.nav_prev}}<\/span><span class=\"slb_next\">{{ui.nav_next}}<\/span><\/div><\/div><\/div><\/div>"
-                    });
-                }
-                if (!!window.SLB && SLB.has_child('View.extend_theme')) {
-                    SLB.View.extend_theme('slb_default', {
-                        "name": "Default (Light)",
-                        "parent": "slb_baseline",
-                        "styles": [{
-                            "handle": "base",
-                            "uri": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/plugins\/simple-lightbox\/themes\/default\/css\/style.css",
-                            "deps": []
-                        }]
-                    });
-                }
-                if (!!window.SLB && SLB.has_child('View.extend_theme')) {
-                    SLB.View.extend_theme('slb_black', {
-                        "name": "Default (Dark)",
-                        "parent": "slb_default",
-                        "styles": [{
-                            "handle": "base",
-                            "uri": "http:\/\/nordthemes.com\/wild-book-demo\/wp-content\/plugins\/simple-lightbox\/themes\/black\/css\/style.css",
-                            "deps": []
-                        }]
-                    });
-                }
-            })
-        })(jQuery);
-    } 
-</script>
-
-<script type = "text/javascript" id = "slb_context" >
-    if (!!window.jQuery) {
-        (function($) {
-            $(document).ready(function() {
-                if (!!window.SLB) {
-                    {
-                        $.extend(SLB, {
-                            "context": ["public", "user_guest"]
-                        });
-                    }
-                }
-            })
-        })(jQuery);
-    } 
-</script>
+</script> -->
